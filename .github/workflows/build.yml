@@ -22,6 +22,9 @@ jobs:
       fail-fast: false
       matrix:
        include:
+         - HOST: "aarch64-unknown-linux-gnu"
+           MEVAL: "export CFLAGS='-flto -O2' LDFLAGS='-flto -O2'"
+           LIBFFI_TEST_OPTIMIZATION: "-O2"
          - HOST: "x86_64-pc-linux-gnu"
            MEVAL: "export CC=clang CXX=clang"
          - HOST: "i386-pc-linux-gnu"
